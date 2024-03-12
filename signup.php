@@ -48,7 +48,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 <h1>SignUp</h1>
 <span>or <a href="login.php">Login</a></span>
 
-<form name="signupForm" action="signup.php" method="POST" onsubmit="return validateForm()">
+<form classname="form" name="signupForm" action="signup.php" method="POST" onsubmit="return validateForm()">
   <input name="name" type="text" placeholder="Enter your name" required>
   <input name="lastname" type="text" placeholder="Enter your last name" required>
   <input name="email" type="email" placeholder="Enter your email" required>
