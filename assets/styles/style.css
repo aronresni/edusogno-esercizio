@@ -3,3 +3,7 @@ body{
     padding: 0;
     text-align: center;
 }
+
+.header{
+    background-color: grey;
+}
