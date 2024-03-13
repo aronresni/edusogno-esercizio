@@ -7,7 +7,7 @@ require '../PhpMailer/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Verificar si se proporcionó un ID de evento en la URL
+
 if (isset($_GET['id'])) {
     $eventId = $_GET['id'];
 
@@ -26,14 +26,13 @@ if (isset($_GET['id'])) {
     exit;
 }
 
-// Procesar los datos del formulario si se envió
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtener los datos del formulario
+    
     $nombreEvento = $_POST['nombre_evento'];
     $asistentes = $_POST['asistentes'];
     $fechaEvento = $_POST['fecha_evento'];
 
-    // Actualizar la información del evento en la base de datos
+
     $sqlUpdate = "UPDATE eventi SET nome_evento = :nombre_evento, attendees = :asistentes, data_evento = :fecha_evento WHERE id = :id";
     $stmtUpdate = $conn->prepare($sqlUpdate);
     $stmtUpdate->bindParam(':nombre_evento', $nombreEvento);
@@ -42,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmtUpdate->bindParam(':id', $eventId);
     $stmtUpdate->execute();
 
-    // Verificar si se realizó la actualización correctamente
     if ($stmtUpdate->rowCount() > 0) {
         echo "Información del evento actualizada correctamente.";
 
