@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -11,9 +12,9 @@ if (!isset($_SESSION['user_email'])) {
 
 // Preparar la consulta SQL para obtener los eventos del usuario actual
 $user_email = $_SESSION['user_email'];
-$sql = "SELECT * FROM utenti WHERE email = :email";
+$sql = "SELECT * FROM eventi WHERE attendees LIKE :user_email";
 $stmt = $conn->prepare($sql);
-$stmt->bindParam(':email', $user_email);
+$stmt->bindValue(':user_email', '%' . $user_email . '%');
 $stmt->execute();
 
 // Obtener los resultados de la consulta
@@ -29,15 +30,22 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Your Events</title>
 </head>
 <body>
+    <a href="admin/create_event.php">Crear nuevo evento</a>
+    <a href="logout.php">Logout</a>
     <h1>Your Events</h1>
-    <ul>
-        <?php foreach ($events as $event): ?>
-            <li>
-                <strong><?= $event['nome_evento'] ?></strong><br>
-                Attendees: <?= $event['attendees'] ?><br>
-                Date: <?= $event['data_evento'] ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+
+    <?php if (empty($events)): ?>
+        <p>No events found for this user.</p>
+    <?php else: ?>
+        <ul>
+            <?php foreach ($events as $event): ?>
+                <li>
+                    <strong><?= $event['nome_evento'] ?></strong><br>
+                    Attendees: <?= $event['attendees'] ?><br>
+                    Date: <?= $event['data_evento'] ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
 </body>
 </html>

@@ -60,45 +60,43 @@ if (
         </p>
     <?php endif; ?>
     <h1>Sign Up</h1>
-    <form action="signup.php" method="post">
-        <input type="text" name="nome" placeholder="Enter your first name">
-        <input type="text" name="cognome" placeholder="Enter your last name">
-        <input type="text" name="email" placeholder="Enter your email">
-        <input type="password" name="password" placeholder="Enter your password">
-        <input type="password" name="confirm_password" placeholder="Confirm your password">
-        <input type="submit" value="Send">
-    </form>
+    <form action="signup.php" method="post" onsubmit="return validateForm()">
+    <input type="text" name="nome" placeholder="Enter your first name" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>">
+    <input type="text" name="cognome" placeholder="Enter your last name" value="<?php echo isset($_POST['cognome']) ? $_POST['cognome'] : ''; ?>">
+    <input type="text" name="email" placeholder="Enter your email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
+    <input type="password" name="password" placeholder="Enter your password">
+    <input type="password" name="confirm_password" placeholder="Confirm your password">
+    <input type="submit" value="Send">
+</form>
 
+<script>
+    function validateForm() {
+        var password = document.forms["signupForm"]["password"].value;
+        var confirm_password = document.forms["signupForm"]["confirm_password"].value;
+        var name = document.forms["signupForm"]["nome"].value;
+        var lastname = document.forms["signupForm"]["cognome"].value;
+        var email = document.forms["signupForm"]["email"].value;
 
-    <script>
-        function validateForm() {
-            var password = document.forms["signupForm"]["password"].value;
-            var confirm_password = document.forms["signupForm"]["confirm_password"].value;
-            var name = document.forms["signupForm"]["name"].value;
-            var lastname = document.forms["signupForm"]["lastname"].value;
-            var email = document.forms["signupForm"]["email"].value;
-
-
-            if (password != confirm_password) {
-                alert("Passwords do not match");
-                return false;
-            }
-
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert("Invalid email format");
-                return false;
-            }
-
-
-            if (name.trim() === "" || lastname.trim() === "") {
-                alert("Name and last name are required");
-                return false;
-            }
-
-            return true;
+        if (password != confirm_password) {
+            alert("Passwords do not match");
+            return false;
         }
-    </script>
+
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email format");
+            return false;
+        }
+
+        if (name.trim() === "" || lastname.trim() === "") {
+            alert("Name and last name are required");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </body>
 
 </html>
