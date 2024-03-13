@@ -7,6 +7,8 @@ body {
     padding: 0;
     text-align: center;
     background-color:  rgba(217, 229, 243, 1);
+    background-image: url('http://localhost/edusogno/edusogno-esercizio/assets/images/MacBook Pro 14_ - 1.svg');    
+    background-size: cover; 
     
 }
 
@@ -38,7 +40,7 @@ h1{
 
     color: white;
     border-radius: 4px;
-   }
+   }    
    .button:hover {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
@@ -49,6 +51,7 @@ h1{
    }
 
    form {
+
     margin: 30px;
     height: 40vh;
     display: flex;
@@ -86,31 +89,34 @@ form input {
     align-items: center;
 };
 
+
+.listas-profile{
+
+display: flex;
+}
 .events-list {
     display: flex;
-    background-color: white;
-    border: 1px solid rgba(19, 64, 119, 1);
+    flex-wrap: wrap;
+    justify-content: center;
+
+   
     padding: 10px;
  
 }
-.listas-profile{
-    display: flex;
-    justify-content: center;
-}
+
 
 .event-item {
   
     background-color: aliceblue;
-    max-width: 500px;
-    height: 150px;
+    width: 550px;
+    height: 200px;
     margin: 20px; 
     border: 1px solid rgba(19, 64, 119, 1);
     border-radius: 8px;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; 
+    justify-content: center;
     flex-direction: column;
-    align-content: center;
 }
 
 .no-events-message {

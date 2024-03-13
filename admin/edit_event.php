@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Editar Evento</h1>
-
+<a href="../profile.php" class="button"><--</a>
     <form action="" method="POST">
         <label for="nombre_evento">Nombre del Evento:</label><br>
         <input type="text" id="nombre_evento" name="nombre_evento" value="<?= $event['nome_evento'] ?>"><br>

@@ -39,16 +39,16 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php else: ?>
     <div class="listas-profile">
 
-        <ul class="events-list">
+        <div class="events-list">
             <?php foreach ($events as $event): ?>
-                <li class="event-item">
+                <div class="event-item">
                     <strong><?= $event['nome_evento'] ?></strong><br>
                     Attendees: <?= $event['attendees'] ?><br>
                     Date: <?= $event['data_evento'] ?>
                     <a class="button">Join</a>
-                </li>
+                </div>
                 <?php endforeach; ?>
-            </ul>
+            </div>
         </div>
 <?php endif; ?>
 

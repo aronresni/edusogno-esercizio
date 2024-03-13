@@ -28,31 +28,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Evento</title>
+    <title>Crea Nuovo Evento</title>
     <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
 <body>
-    <h1>Crear Nuevo Evento</h1>
+    <h1>Crea Nuovo Evento</h1>
+    <a href="../profile.php" class="button"><--</a>
 
     <form action="create_event.php" method="POST">
-        <label for="nombre_evento">Nombre del Evento:</label><br>
+        <label for="nombre_evento">Nome dell'Evento:</label><br>
         <input type="text" id="nombre_evento" name="nombre_evento" required><br>
         
-        <label for="asistentes">Asistentes (separados por comas):</label><br>
+        <label for="asistentes">Partecipanti (separati da virgole):</label><br>
         <textarea id="asistentes" name="asistentes" rows="4" cols="50" required></textarea><br>
 
-        <label for="fecha_evento">Fecha del Evento:</label><br>
+        <label for="fecha_evento">Data dell'Evento:</label><br>
         <input type="datetime-local" id="fecha_evento" name="fecha_evento" required><br>
 
-        <input class="button" type="submit" value="Crear Evento">
-         <a class="button" href="admin_panel.php">Ver información</a>
+        <input class="button" type="submit" value="Crea Evento">
+         <a class="button" href="admin_panel.php">Visualizza informazioni</a>
     </form>
 </body>
 </html>
