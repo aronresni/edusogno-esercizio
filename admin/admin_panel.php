@@ -23,26 +23,29 @@ try {
 } catch (PDOException $e) {
     die('Connection Failed: ' . $e->getMessage());
 }
-?><!DOCTYPE html>
-<html lang="en">
+?>
+
+<!DOCTYPE html>
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Pannello Amministratore</title>
+    <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
 <body>
-    <h1>Admin Panel</h1>
+    <h1>Pannello Amministratore</h1>
 
-    <h2>Usuarios</h2>
+    <h1>Utenti</h1>
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
+            <th>Nome</th>
+            <th>Cognome</th>
             <th>Email</th>
-            <th>Contraseña</th>
-            <th>Editar</th>
+            <th>Password</th>
+            <th>Modifica</th>
         </tr>
         <?php foreach ($users as $user): ?>
         <tr>
@@ -51,20 +54,21 @@ try {
             <td><?= $user['cognome'] ?></td>
             <td><?= $user['email'] ?></td>
             <td><?= $user['password'] ?></td>
-            <td><a href="edit_user.php?id=<?= $user['id'] ?>">Editar</a></td>
+            <td><a href="edit_user.php?id=<?= $user['id'] ?>">Modifica</a></td>
         </tr>
         <?php endforeach; ?>
     </table>
 
-    <h2>Eventos</h2>
-    <a href="create_event.php">Crear Evento Nuevo</a>
+    <h1>Eventi</h1>
+    <a class="button" href="create_event.php">Crea Nuovo Evento</a>
+    <a class="button" href="../profile.php"> Profile</a>
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>Asistentes</th>
-            <th>Nombre del Evento</th>
-            <th>Fecha del Evento</th>
-            <th>Editar</th> 
+            <th>Partecipanti</th>
+            <th>Nome dell'Evento</th>
+            <th>Data dell'Evento</th>
+            <th>Modifica</th> 
         </tr>
         <?php foreach ($events as $event): ?>
         <tr>
@@ -72,7 +76,7 @@ try {
             <td><?= $event['attendees'] ?></td>
             <td><?= $event['nome_evento'] ?></td>
             <td><?= $event['data_evento'] ?></td>
-            <td><a href="edit_event.php?id=<?= $event['id'] ?>">Editar</a></td>
+            <td><a href="edit_event.php?id=<?= $event['id'] ?>">Modifica</a></td>
         </tr>
         <?php endforeach; ?>
     </table>

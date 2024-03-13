@@ -23,9 +23,11 @@
     <meta charset="utf-8">
     <title>Welcome to you WebApp</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
+
   </head>
   <body>
+
     <?php require 'partials/header.php' ?>
 
     <?php if(!empty($user)): ?>
@@ -35,10 +37,10 @@
         Logout
       </a>
     <?php else: ?>
-      <h1>Please Login or SignUp</h1>
+      <h1>Crea il tuo account</h1>
 
-      <a href="login.php">Login</a> or
-      <a href="signup.php">SignUp</a>
+      <a class="button" href="login.php">ACCEDI</a> or
+      <a class="button" href="signup.php">REGISTRATI</a>
     <?php endif; ?>
   </body>
 </html>

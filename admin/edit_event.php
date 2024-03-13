@@ -59,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Evento</title>
+    <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
 <body>
     <h1>Editar Evento</h1>
@@ -73,9 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="fecha_evento">Fecha del Evento:</label><br>
         <input type="datetime-local" id="fecha_evento" name="fecha_evento" value="<?= date('Y-m-d\TH:i', strtotime($event['data_evento'])) ?>"><br>
 
-        <input type="submit" value="Guardar Cambios">
+        <input class="button" type="submit" value="Guardar Cambios">
 
-        <a href="admin_panel.php">Volver</a>
+        <a  class="button" href="admin_panel.php">Volver</a>
     </form>
 </body>
 </html>

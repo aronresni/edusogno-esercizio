@@ -1,9 +1,137 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
+
+
+body {
+    font-family: DM Sans;
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color:  rgba(217, 229, 243, 1);
+    
 }
 
-.header{
-    background-color: grey;
+.header {
+    background-color: white;
+    height: 10vh;
+    box-shadow: 0px 4px 18px -6px rgba(0, 87, 255, 1);
+    border-bottom-left-radius: 13px; 
+    border-bottom-right-radius: 13px;
+}
+
+.logo {
+    float: left; 
+    margin-left: 20px; 
+    margin-top: 20px;
+    
+}
+h1{
+    color: rgba(19, 64, 119, 1);
+}
+.button{
+    margin: 5px;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: rgba(0, 87, 255, 1);
+
+    color: white;
+    border-radius: 4px;
+   }
+   .button:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+   }
+   
+   .button:active {
+    transform: translate(0em, 0.2em);
+   }
+
+   form {
+    margin: 30px;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(19, 64, 119, 1);
+    border-radius: 5px;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+form input {
+    margin-bottom: 10px;
+    margin: 0 40px;
+    width: 50vh;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    background-color: transparent;
+}
+
+.container-button{
+ margin-top: 30px;
+ margin-bottom: 10px;
+ 
+    margin-right: 20px;
+    height: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+};
+
+.events-list {
+    display: flex;
+    background-color: white;
+    border: 1px solid rgba(19, 64, 119, 1);
+    padding: 10px;
+ 
+}
+.listas-profile{
+    display: flex;
+    justify-content: center;
+}
+
+.event-item {
+  
+    background-color: aliceblue;
+    max-width: 500px;
+    height: 150px;
+    margin: 20px; 
+    border: 1px solid rgba(19, 64, 119, 1);
+    border-radius: 8px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.no-events-message {
+    background-color: white;
+    border: 1px solid rgba(19, 64, 119, 1);
+    padding: 10px; 
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f0f0f0;
 }

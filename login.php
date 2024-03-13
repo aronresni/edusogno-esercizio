@@ -29,7 +29,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     <meta charset="utf-8">
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
   </head>
   <body>
     <?php require 'partials/header.php' ?>
@@ -38,13 +38,16 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
       <p> <?= $message ?></p>
     <?php endif; ?>
 
-    <h1>Login</h1>
-    <span>or <a href="signup.php">SignUp</a></span>
+    <h1>Hai già un account?</h1>
 
     <form action="login.php" method="POST">
-      <input name="email" type="text" placeholder="Enter your email">
-      <input name="password" type="password" placeholder="Enter your Password">
-      <input type="submit" value="Submit">
+    <label>Inserisci l’e-mail</label>
+    <input name="email" type="text" placeholder="Enter your email">
+    <label>Inserisci la password</label>
+    <input name="password" type="password" placeholder="Enter your Password">
+      <input class="button" type="submit" value="ACCEDI">
+
+      <a href="signup.php">Non hai ancora un profilo? Registrati</a>
     </form>
   </body>
 </html>

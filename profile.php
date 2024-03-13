@@ -28,24 +28,32 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Events</title>
+    <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
 <body>
-    <a href="admin/create_event.php">Crear nuevo evento</a>
-    <a href="logout.php">Logout</a>
-    <h1>Your Events</h1>
-
+<?php require 'partials/header-on.php' ?>
+<div class="container-button">
+    <a class="button" href="admin/create_event.php">Crear nuevo evento</a>
+    <a class="button" href="logout.php">Logout</a>
+</div>
+    <h1>Ciao NOME ecco i tuoi eventi</h1>
     <?php if (empty($events)): ?>
-        <p>No events found for this user.</p>
-    <?php else: ?>
-        <ul>
+    <p class="no-events-message">No events found for this user.</p>
+<?php else: ?>
+    <div class="listas-profile">
+
+        <ul class="events-list">
             <?php foreach ($events as $event): ?>
-                <li>
+                <li class="event-item">
                     <strong><?= $event['nome_evento'] ?></strong><br>
                     Attendees: <?= $event['attendees'] ?><br>
                     Date: <?= $event['data_evento'] ?>
+                    <a class="button">Join</a>
                 </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+<?php endif; ?>
+
 </body>
 </html>

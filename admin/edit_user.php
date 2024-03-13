@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuario</title>
+    <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
 <body>
     <h1>Editar Usuario</h1>
@@ -73,6 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="password">Contraseña:</label><br>
     <input type="password" id="password" name="password" value="<?= $user['password'] ?>"><br>
 
-    <input type="submit" value="Guardar Cambios">
-    <a href="admin_panel.php">Ver información</a>
+    <input  class="button" type="submit" value="Guardar Cambios">
+    <a  class="button" href="admin_panel.php">Ver información</a>
 </form>

@@ -49,7 +49,8 @@ if (
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Crea il tuo account</title>
+    <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
 
 <body>
@@ -59,28 +60,30 @@ if (
             <?= $message ?>
         </p>
     <?php endif; ?>
-    <h1>Sign Up</h1>
+    <h1>Crea il tuo account</h1>
     <form action="signup.php" method="post" onsubmit="return validateForm()">
-    <input type="text" name="nome" placeholder="Enter your first name" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>">
-    <input type="text" name="cognome" placeholder="Enter your last name" value="<?php echo isset($_POST['cognome']) ? $_POST['cognome'] : ''; ?>">
-    <input type="text" name="email" placeholder="Enter your email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
-    <input type="password" name="password" placeholder="Enter your password">
-    <input type="password" name="confirm_password" placeholder="Confirm your password">
-    <input type="submit" value="Send">
+    <label>Inserisci il nome</label>
+    <input type="text" name="nome" placeholder="Mario" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>">
+    <label>Inserisci il cognome</label>
+    <input type="text" name="cognome" placeholder="Rossi" value="<?php echo isset($_POST['cognome']) ? $_POST['cognome'] : ''; ?>">
+    <label>Inserisci l’email</label>
+    <input type="text" name="email" placeholder="name@example.com" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
+    <label>Inserisci la password</label>
+    <input type="password" name="password" placeholder="Scrivila qui">
+
+    <input class="button" type="submit" value="Send">
+    <a href="login.php">Hai già un account? Accedi</a>
 </form>
 
 <script>
     function validateForm() {
         var password = document.forms["signupForm"]["password"].value;
-        var confirm_password = document.forms["signupForm"]["confirm_password"].value;
+       
         var name = document.forms["signupForm"]["nome"].value;
         var lastname = document.forms["signupForm"]["cognome"].value;
         var email = document.forms["signupForm"]["email"].value;
 
-        if (password != confirm_password) {
-            alert("Passwords do not match");
-            return false;
-        }
+ 
 
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
