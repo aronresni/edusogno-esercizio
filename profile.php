@@ -1,19 +1,19 @@
 <?php
 session_start();
 
+require 'assets/db/Conexion.php'; // Asegúrate de que este archivo contiene la lógica para establecer la conexión a la base de datos
+
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['user_email'])) {
     header('Location: login.php');
     exit; // Detener la ejecución del script para evitar que se siga cargando la página
 }
 
-require 'assets/db/Conexion.php';
-
 // Preparar la consulta SQL para obtener los eventos del usuario actual
 $user_email = $_SESSION['user_email'];
-$sql = "SELECT * FROM eventi WHERE user_email = :user_email";
+$sql = "SELECT * FROM utenti WHERE email = :email";
 $stmt = $conn->prepare($sql);
-$stmt->bindParam(':user_email', $user_email);
+$stmt->bindParam(':email', $user_email);
 $stmt->execute();
 
 // Obtener los resultados de la consulta

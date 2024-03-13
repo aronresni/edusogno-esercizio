@@ -2,13 +2,13 @@
 session_start();
 
 if (isset($_SESSION['user_email'])) {
-  header('Location: /php-login');
+  header('Location: profile.php');
 }
 
 require 'assets/db/Conexion.php';
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
-  $records = $conn->prepare('SELECT email, password FROM users WHERE email = :email');
+  $records = $conn->prepare('SELECT email, password FROM utenti WHERE email = :email');
   $records->bindParam(':email', $_POST['email']);
   $records->execute();
   $user = $records->fetch(PDO::FETCH_ASSOC);
@@ -17,12 +17,11 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
   if ($user && password_verify($_POST['password'], $user['password'])) {
     $_SESSION['user_email'] = $user['email'];
-    header("Location: /php-login");
+    header("Location: login.php");
   } else {
     $message = 'Sorry, those credentials do not match';
   }
 }
-
 ?>
 <!DOCTYPE html>
 <html>

@@ -9,17 +9,10 @@ try {
   $conn = new PDO("pgsql:host=$server;dbname=$database;", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
-  $sqlUsers = "CREATE TABLE IF NOT EXISTS users (
-                  id SERIAL PRIMARY KEY,
-                  email VARCHAR(255),
-                  password VARCHAR(255)
-              )";
-  $conn->exec($sqlUsers);
-
-  $sqlUtentiEventi = "CREATE TABLE IF NOT EXISTS utenti (
-                          id SERIAL PRIMARY KEY,
-                          nome VARCHAR(45),
+              
+              $sqlUtentiEventi = "CREATE TABLE IF NOT EXISTS utenti (
+                id SERIAL PRIMARY KEY,
+                nome VARCHAR(45),
                           cognome VARCHAR(45),
                           email VARCHAR(255),
                           password VARCHAR(255)
