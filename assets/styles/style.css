@@ -8,7 +8,8 @@ body {
     text-align: center;
     background-color:  rgba(217, 229, 243, 1);
     background-image: url('http://localhost/edusogno/edusogno-esercizio/assets/images/MacBook Pro 14_ - 1.svg');    
-    background-size: cover; 
+    background-size: cover; /* Esto hará que la imagen de fondo cubra todo el cuerpo */
+    background-position: center; 
     
 }
 
@@ -139,5 +140,16 @@ table th, table td {
 }
 
 table th {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0;  
+}
+
+.user-container{
+    text-align: center;
+    margin: 50px;
+    width: 75vh;
+    height: 75vh;
+}
+.page-user{
+    display:flex;
+    justify-content: center;
 }

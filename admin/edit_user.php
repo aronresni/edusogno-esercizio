@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmtUpdate->rowCount() > 0) {
         echo "Información de usuario actualizada correctamente.";
+        header('Location: admin_panel.php');
     } else {
         echo "Error al actualizar la información del usuario.";
     }
@@ -50,30 +51,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Usuario</title>
+    <title>Modifica Utente</title>
     <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
 <body>
-    <h1>Editar Usuario</h1>
 
-    <form action="" method="POST">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" value="<?= $user['nome'] ?>"><br>
+    <h1>Modifica Utente</h1>
+<div class="page-user">
+
+    <form action="" method="POST" class="user-container">
+        
+        <label for="nombre">Nome:</label><br>
+        <input type="text" id="nombre" name="nombre" value="<?= $user['nome'] ?>"><br>
     
-    <label for="apellido">Apellido:</label><br>
+    <label for="apellido">Cognome:</label><br>
     <input type="text" id="apellido" name="apellido" value="<?= $user['cognome'] ?>"><br>
 
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email" value="<?= $user['email'] ?>"><br>
 
-    <label for="password">Contraseña:</label><br>
+    <label for="password">Password:</label><br>
     <input type="password" id="password" name="password" value="<?= $user['password'] ?>"><br>
 
-    <input  class="button" type="submit" value="Guardar Cambios">
-    <a  class="button" href="admin_panel.php">Ver información</a>
+    <input  class="button" type="submit" value="Salva Modifiche">
+    <a  class="button" href="admin_panel.php">Visualizza informazioni</a>
 </form>
+</div>

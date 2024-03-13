@@ -60,7 +60,7 @@ try {
     </table>
 
     <h1>Eventi</h1>
-    <a class="button" href="create_event.php">Crea Nuovo Evento</a>
+   
     <a class="button" href="../profile.php"> Profile</a>
     <table border="1">
         <tr>
