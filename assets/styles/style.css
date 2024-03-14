@@ -153,3 +153,10 @@ table th {
     display:flex;
     justify-content: center;
 }
+
+textarea{
+    height: 120px;
+}
+.form-create-event{
+    height: 60vh;
+}

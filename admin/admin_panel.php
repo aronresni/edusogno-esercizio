@@ -36,7 +36,7 @@ try {
 </head>
 <body>
     <h1>Pannello Amministratore</h1>
-
+    <a class="button" href="../profile.php"> Profile</a>
     <h1>Utenti</h1>
     <table border="1">
         <tr>
@@ -61,7 +61,7 @@ try {
 
     <h1>Eventi</h1>
    
-    <a class="button" href="../profile.php"> Profile</a>
+    
     <table border="1">
         <tr>
             <th>ID</th>

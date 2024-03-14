@@ -40,13 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Crea Nuovo Evento</h1>
     <a href="../profile.php" class="button"><--</a>
-
-    <form action="create_event.php" method="POST">
+    <div class="page-user">
+    <form action="create_event.php" method="POST" class="form-create-event">
         <label for="nombre_evento">Nome dell'Evento:</label><br>
         <input type="text" id="nombre_evento" name="nombre_evento" required><br>
         
-        <label for="asistentes">Partecipanti (separati da virgole):</label><br>
-        <textarea id="asistentes" name="asistentes" rows="4" cols="50" required></textarea><br>
+        <label  for="asistentes">Partecipanti (separati da virgole):</label><br>
+        <textarea  id="asistentes" name="asistentes" rows="4" cols="50" required></textarea><br>
 
         <label for="fecha_evento">Data dell'Evento:</label><br>
         <input type="datetime-local" id="fecha_evento" name="fecha_evento" required><br>
@@ -54,5 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input class="button" type="submit" value="Crea Evento">
          <a class="button" href="admin_panel.php">Visualizza informazioni</a>
     </form>
+    </div>
 </body>
 </html>
