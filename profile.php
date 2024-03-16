@@ -49,7 +49,6 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?= $event['nome_evento'] ?>
                         </strong><br>
                         <div class="attendees-container">
-                            <!-- Agrega una clase al div que contiene los participantes -->
                             Partecipanti:
                             <?= $event['attendees'] ?><br>
                         </div>

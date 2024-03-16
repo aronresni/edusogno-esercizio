@@ -1,12 +1,10 @@
 <?php
 require '../assets/db/Conexion.php';
 
-// Verificar si se ha proporcionado un ID de evento en la URL
 if (isset($_GET['id'])) {
     $eventId = $_GET['id'];
 
     try {
-        // Preparar y ejecutar la consulta para eliminar el evento
         $sqlDelete = "DELETE FROM eventi WHERE id = :id";
         $stmtDelete = $conn->prepare($sqlDelete);
         $stmtDelete->bindParam(':id', $eventId, PDO::PARAM_INT);
