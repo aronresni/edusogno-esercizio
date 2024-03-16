@@ -34,20 +34,22 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <body>
     <?php require 'partials/header.php' ?>
 
-    <?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
 
     <h1>Hai già un account?</h1>
-
-    <form action="login.php" method="POST">
+<div class="container">
+  <form action="login.php" method="POST">
     <label>Inserisci l’e-mail</label>
     <input name="email" type="text" placeholder="Enter your email">
     <label>Inserisci la password</label>
     <input name="password" type="password" placeholder="Enter your Password">
-      <input class="button" type="submit" value="ACCEDI">
-
-      <a href="signup.php">Non hai ancora un profilo? Registrati</a>
+    <?php if (!empty($message)): ?>
+        <p style="color: red;">
+            <?= $message  ?>
+        </p>
+    <?php endif; ?>
+    <input class="button" type="submit" value="ACCEDI">
+    
+    <a href="signup.php">Non hai ancora un profilo? Registrati</a>
     </form>
   </body>
 </html>

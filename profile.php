@@ -41,11 +41,14 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="events-list">
             <?php foreach ($events as $event): ?>
                 <div class="event-item">
+                <a class="button-close" href="admin/delete_event.php?id=<?= $event['id'] ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar este evento?')">X</a>
                     <strong><?= $event['nome_evento'] ?></strong><br>
                     Partecipanti: <?= $event['attendees'] ?><br>
                     Data: <?= $event['data_evento'] ?>
                     <a class="button">Unisciti</a>
                     <a class="button" href="admin/edit_event.php?id=<?= $event['id'] ?>">Modifica</a>
+
+
                 </div>
                 <?php endforeach; ?>
             </div>

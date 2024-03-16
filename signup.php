@@ -55,25 +55,29 @@ if (
 
 <body>
     <?php require 'partials/header.php' ?>
-    <?php if (!empty($message)): ?>
-        <p>
-            <?= $message ?>
+   
+    <h1>Crea il tuo account</h1>
+    <div class="container">
+
+        <form action="signup.php" method="post" onsubmit="return validateForm()">
+            <label>Inserisci il nome</label>
+            <input type="text" name="nome" placeholder="Mario" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>">
+            <label>Inserisci il cognome</label>
+            <input type="text" name="cognome" placeholder="Rossi" value="<?php echo isset($_POST['cognome']) ? $_POST['cognome'] : ''; ?>">
+            <label>Inserisci l’email</label>
+            <input type="text" name="email" placeholder="name@example.com" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
+            <label>Inserisci la password</label>
+            <input type="password" name="password" placeholder="Scrivila qui">
+            <?php if (!empty($message)): ?>
+        <p style="color: red;">
+            <?= $message  ?>
         </p>
     <?php endif; ?>
-    <h1>Crea il tuo account</h1>
-    <form action="signup.php" method="post" onsubmit="return validateForm()">
-    <label>Inserisci il nome</label>
-    <input type="text" name="nome" placeholder="Mario" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>">
-    <label>Inserisci il cognome</label>
-    <input type="text" name="cognome" placeholder="Rossi" value="<?php echo isset($_POST['cognome']) ? $_POST['cognome'] : ''; ?>">
-    <label>Inserisci l’email</label>
-    <input type="text" name="email" placeholder="name@example.com" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
-    <label>Inserisci la password</label>
-    <input type="password" name="password" placeholder="Scrivila qui">
 
-    <input class="button" type="submit" value="Send">
-    <a href="login.php">Hai già un account? Accedi</a>
-</form>
+            <input class="button" type="submit" value="Send">
+            <a href="login.php">Hai già un account? Accedi</a>
+        </form>
+    </div>
 
 <script>
     function validateForm() {
