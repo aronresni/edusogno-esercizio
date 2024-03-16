@@ -1,9 +1,8 @@
 <?php
-require '../assets/db/Conexion.php';
+require '../db/Conexion.php';
 
 if (isset($_GET['id'])) {
     $eventId = $_GET['id'];
-
     try {
         $sqlDelete = "DELETE FROM eventi WHERE id = :id";
         $stmtDelete = $conn->prepare($sqlDelete);
@@ -12,7 +11,7 @@ if (isset($_GET['id'])) {
 
         if ($stmtDelete->rowCount() > 0) {
             echo "Evento eliminado correctamente.";
-            header('Location: ../profile.php');
+            header('Location: http://localhost/edusogno/edusogno-esercizio/pages/profile/profile.php');
         } else {
             echo "No se encontró ningún evento con el ID proporcionado.";
         }

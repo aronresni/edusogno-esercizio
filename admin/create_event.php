@@ -1,5 +1,5 @@
 <?php
-require '../assets/db/Conexion.php';
+require '../db/Conexion.php';
 require '../PhpMailer/Exception.php';
 require '../PhpMailer/PHPMailer.php';
 require '../PhpMailer/SMTP.php';
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmtInsert->rowCount() > 0) {
         echo "Evento creado correctamente.";
-       
+        header('Location: http://localhost/edusogno/edusogno-esercizio/pages/profile/profile.php');
     } else {
         echo "Error al crear el evento.";
     }
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Crea Nuovo Evento</h1>
-    <a href="../profile.php" class="button"><--</a>
+    <a href="http://localhost/edusogno/edusogno-esercizio/pages/profile/profile.php" class="button"><--</a>
     <div class="page-user">
     <form action="create_event.php" method="POST" class="form-create-event">
         <label for="nombre_evento">Nome dell'Evento:</label><br>
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="datetime-local" id="fecha_evento" name="fecha_evento" required><br>
 
         <input class="button" type="submit" value="Crea Evento">
-         <a class="button" href="admin_panel.php">Visualizza informazioni</a>
+         <a class="button" href="http://localhost/edusogno/edusogno-esercizio/admin/admin_panel.php">Visualizza informazioni</a>
     </form>
     </div>
 </body>

@@ -1,5 +1,5 @@
 <?php
-require '../assets/db/Conexion.php';
+require '../db/Conexion.php';
 require '../PhpMailer/Exception.php';
 require '../PhpMailer/PHPMailer.php';
 require '../PhpMailer/SMTP.php';
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmtUpdate->rowCount() > 0) {
         echo "Información del evento actualizada correctamente.";
-        header('Location: ../profile.php');
+        header('Location: http://localhost/edusogno/edusogno-esercizio/pages/profile/profile.php');
 
     } else {
         echo "Error al actualizar la información del evento.";
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Modifica Evento</h1>
-<a href="../profile.php" class="button"><--</a>
+<a href="http://localhost/edusogno/edusogno-esercizio/pages/profile/profile.php" class="button"><--</a>
 <div class="page-user">
     <form action="" method="POST">
         <label for="nombre_evento">Nome dell'Evento:</label><br>

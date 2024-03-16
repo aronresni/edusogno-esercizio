@@ -32,8 +32,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <?php require '../../partials/header-on.php' ?>
     <div class="container-button">
-        <a class="button create-event" href="admin/create_event.php">Crea nuovo evento</a>
-        <a class="button logout" href="logout.php">Logout</a>
+        <a class="button create-event" href="http://localhost/edusogno/edusogno-esercizio/admin/create_event.php">Crea nuovo evento</a>
+        <a class="button logout" href="http://localhost/edusogno/edusogno-esercizio/pages/logout/logout.php">Logout</a>
     </div>
     <h1>Ciao NOME ecco i tuoi eventi</h1>
     <?php if (empty ($events)): ?>
@@ -66,6 +66,5 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 </body>
 
-<?php require '../../partials/footer.php' ?>
 
 </html>
