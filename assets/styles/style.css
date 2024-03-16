@@ -2,16 +2,16 @@
 
 
 body {
-    min-height:707px;
+    min-height: 707px;
     font-family: DM Sans;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color:  rgba(217, 229, 243, 1);
+    background-color: rgba(217, 229, 243, 1);
     background-image: url('http://localhost/edusogno/edusogno-esercizio/assets/images/MacBook Pro 14_ - 1.svg');    
-    background-size: cover; /* Esto hará que la imagen de fondo cubra todo el cuerpo */
+    background-size: cover;
     background-position: center; 
-    
+    background-attachment: fixed; /* Fija el fondo */
 }
 
 .header {
