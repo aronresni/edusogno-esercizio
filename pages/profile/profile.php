@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-require 'assets/db/Conexion.php';
+require '../../db/conexion.php';
 
 if (!isset ($_SESSION['user_email'])) {
-    header('Location: login.php');
+    header('Location: http://localhost/edusogno/edusogno-esercizio/pages/login/login.php');
     exit;
 }
 
@@ -26,13 +26,14 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I tuoi Eventi</title>
     <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
+
 </head>
 
 <body>
-    <?php require 'partials/header-on.php' ?>
+    <?php require '../../partials/header-on.php' ?>
     <div class="container-button">
-        <a class="button" href="admin/create_event.php">Crea nuovo evento</a>
-        <a class="button" href="logout.php">Logout</a>
+        <a class="button create-event" href="admin/create_event.php">Crea nuovo evento</a>
+        <a class="button logout" href="logout.php">Logout</a>
     </div>
     <h1>Ciao NOME ecco i tuoi eventi</h1>
     <?php if (empty ($events)): ?>
@@ -43,8 +44,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="events-list">
                 <?php foreach ($events as $event): ?>
                     <div class="event-item">
-                        <a class="button-close" href="admin/delete_event.php?id=<?= $event['id'] ?>"
-                            onclick="return confirm('¿Estás seguro de que deseas eliminar este evento?')">x</a>
+                        <a class="button-close" href="http://localhost/edusogno/edusogno-esercizio/admin/delete_event.php?id=<?= $event['id'] ?>"
+                            onclick="return confirm('¿Sei sicuro di voler eliminare questo evento?')">x</a>
                         <strong>
                             <?= $event['nome_evento'] ?>
                         </strong><br>
@@ -55,7 +56,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         Data:
                         <?= $event['data_evento'] ?>
                         <a class="button">Unisciti</a>
-                        <a class="button" href="admin/edit_event.php?id=<?= $event['id'] ?>">Modifica</a>
+                        <a class="button" href="http://localhost/edusogno/edusogno-esercizio/admin/edit_event.php?id=<?= $event['id'] ?>">Modifica</a>
 
 
                     </div>
@@ -63,7 +64,8 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     <?php endif; ?>
-
 </body>
+
+<?php require '../../partials/footer.php' ?>
 
 </html>

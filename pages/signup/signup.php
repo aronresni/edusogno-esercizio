@@ -1,10 +1,10 @@
 <?php
-require "assets/db/conexion.php";
+  require '../../db/conexion.php';
 $message = "";
 session_start();
 
 if (isset($_SESSION['user_email'])) {
-  header('Location: profile.php');
+  header('Location:  http://localhost/edusogno/edusogno-esercizio/pages/login/login.php');
 }
 
 if (
@@ -30,7 +30,7 @@ if (
 
         if ($stmt->execute()) {
             $message = "Registration successful";
-            header("Location: login.php");
+            header("Location:  http://localhost/edusogno/edusogno-esercizio/pages/login/login.php");
         } else {
             $message = "Sorry, there was an error";
         }

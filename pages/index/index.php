@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  require 'assets/db/Conexion.php';
+  require '../../db/conexion.php';
 
   if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
@@ -28,19 +28,19 @@
   </head>
   <body>
 
-    <?php require 'partials/header.php' ?>
+    <?php require '../../partials/header.php' ?>
 
     <?php if(!empty($user)): ?>
       <br> Welcome. <?= $user['email']; ?>
       <br>You are Successfully Logged In
-      <a href="logout.php">
+      <a href="http://localhost/edusogno/edusogno-esercizio/pages/logout/logout.php">
         Logout
       </a>
     <?php else: ?>
       <h1>Crea il tuo account</h1>
 
-      <a class="button" href="login.php">ACCEDI</a> or
-      <a class="button" href="signup.php">REGISTRATI</a>
+      <a class="button" href="http://localhost/edusogno/edusogno-esercizio/pages/login/login.php">ACCEDI</a> or
+      <a class="button" href="http://localhost/edusogno/edusogno-esercizio/pages/signup/signup.php">REGISTRATI</a>
     <?php endif; ?>
   </body>
 </html>

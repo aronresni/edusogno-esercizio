@@ -2,10 +2,10 @@
 session_start();
 
 if (isset($_SESSION['user_email'])) {
-  header('Location: profile.php');
+  header('Location: ../profile/profile.php');
 }
 
-require 'assets/db/Conexion.php';
+require '../../db/conexion.php';
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
   $records = $conn->prepare('SELECT email, password FROM utenti WHERE email = :email');
@@ -32,12 +32,12 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
   </head>
   <body>
-    <?php require 'partials/header.php' ?>
+  <?php require '../../partials/header.php' ?>
 
 
     <h1>Hai già un account?</h1>
 <div class="container">
-  <form action="login.php" method="POST">
+  <form action="http://localhost/edusogno/edusogno-esercizio/pages/login/login.php" method="POST">
     <label>Inserisci l’e-mail</label>
     <input name="email" type="text" placeholder="Enter your email">
     <label>Inserisci la password</label>
@@ -49,7 +49,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     <?php endif; ?>
     <input class="button" type="submit" value="ACCEDI">
     
-    <a href="signup.php">Non hai ancora un profilo? Registrati</a>
+    <a href="http://localhost/edusogno/edusogno-esercizio/pages/signup/signup.php">Non hai ancora un profilo? Registrati</a>
     </form>
   </body>
 </html>

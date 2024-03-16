@@ -2,15 +2,15 @@
 
 
 body {
-    min-height: 707px;
+    min-height: 1000p;
     font-family: DM Sans;
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: rgba(217, 229, 243, 1);
-    background-image: url('http://localhost/edusogno/edusogno-esercizio/assets/images/MacBook Pro 14_ - 1.svg');    
+    background-image: url('http://localhost/edusogno/edusogno-esercizio/assets/images/background-image.svg');
     background-size: cover;
-    background-position: center; 
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -54,6 +54,19 @@ h1{
    .events-list .event-item .button-close{
     transform:translatex(457px) translatey(-17px);
    }
+ 
+   .container-button {
+    text-align: center;
+   }
+
+   @media (max-width: 600px) {
+    .create-event,
+    .logout {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
    
    
 
@@ -100,14 +113,12 @@ form input {
 .container-button{
  margin-top: 30px;
  margin-bottom: 10px;
- 
-    margin-right: 20px;
-    height: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+ margin-right: 20px;
+ display: flex;
+ justify-content: flex-end;
+ align-content: center;
+ flex-wrap: wrap;
+ align-items: center;
 };
 
 

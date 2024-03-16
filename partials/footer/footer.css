@@ -1,0 +1,42 @@
+
+#footer-piePagina {
+    background-color: #333;
+    color: #fff;
+   
+}
+
+.footer-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-izquierdaPie h3,
+.footer-derechaPie h3 {
+    font-size: 20px;
+}
+
+.footer-izquierdaPie p {
+    font-size: 14px;
+}
+
+.footer-derechaPie ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-derechaPie ul li {
+    margin-bottom: 10px;
+}
+
+.footer-derechaPie ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-derechaPie ul li a:hover {
+    text-decoration: underline;
+}
