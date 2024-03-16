@@ -58,6 +58,8 @@ h1{
    
 
    .button-close{
+    color: white;
+    border-radius: 4px;
     width: 5px;
     margin: 5px;
     text-decoration: none;
@@ -141,6 +143,10 @@ display: flex;
     justify-content: center;
     flex-direction: column;
     min-height:312px;
+}
+.attendees-container {
+    max-height: 100px; /* Altura máxima del contenedor de participantes */
+    overflow: auto; /* Agregar barras de desplazamiento si los participantes desbordan el contenedor */
 }
 
 .no-events-message {

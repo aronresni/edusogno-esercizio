@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-require 'assets/db/Conexion.php'; 
+require 'assets/db/Conexion.php';
 
-if (!isset($_SESSION['user_email'])) {
+if (!isset ($_SESSION['user_email'])) {
     header('Location: login.php');
-    exit; 
+    exit;
 }
 
 $user_email = $_SESSION['user_email'];
@@ -19,6 +19,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,34 +27,44 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>I tuoi Eventi</title>
     <link rel="stylesheet" href="http://localhost/edusogno/edusogno-esercizio/assets/styles/style.css">
 </head>
+
 <body>
-<?php require 'partials/header-on.php' ?>
-<div class="container-button">
-    <a class="button" href="admin/create_event.php">Crea nuovo evento</a>
-    <a class="button" href="logout.php">Logout</a>
-</div>
+    <?php require 'partials/header-on.php' ?>
+    <div class="container-button">
+        <a class="button" href="admin/create_event.php">Crea nuovo evento</a>
+        <a class="button" href="logout.php">Logout</a>
+    </div>
     <h1>Ciao NOME ecco i tuoi eventi</h1>
-    <?php if (empty($events)): ?>
-    <p class="no-events-message">Nessun evento trovato per questo utente.</p>
-<?php else: ?>
-    <div class="listas-profile">
+    <?php if (empty ($events)): ?>
+        <p class="no-events-message">Nessun evento trovato per questo utente.</p>
+    <?php else: ?>
+        <div class="listas-profile">
 
-        <div class="events-list">
-            <?php foreach ($events as $event): ?>
-                <div class="event-item">
-                <a class="button-close" href="admin/delete_event.php?id=<?= $event['id'] ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar este evento?')">X</a>
-                    <strong><?= $event['nome_evento'] ?></strong><br>
-                    Partecipanti: <?= $event['attendees'] ?><br>
-                    Data: <?= $event['data_evento'] ?>
-                    <a class="button">Unisciti</a>
-                    <a class="button" href="admin/edit_event.php?id=<?= $event['id'] ?>">Modifica</a>
+            <div class="events-list">
+                <?php foreach ($events as $event): ?>
+                    <div class="event-item">
+                        <a class="button-close" href="admin/delete_event.php?id=<?= $event['id'] ?>"
+                            onclick="return confirm('¿Estás seguro de que deseas eliminar este evento?')">x</a>
+                        <strong>
+                            <?= $event['nome_evento'] ?>
+                        </strong><br>
+                        <div class="attendees-container">
+                            <!-- Agrega una clase al div que contiene los participantes -->
+                            Partecipanti:
+                            <?= $event['attendees'] ?><br>
+                        </div>
+                        Data:
+                        <?= $event['data_evento'] ?>
+                        <a class="button">Unisciti</a>
+                        <a class="button" href="admin/edit_event.php?id=<?= $event['id'] ?>">Modifica</a>
 
 
-                </div>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>
-<?php endif; ?>
+    <?php endif; ?>
 
 </body>
+
 </html>
